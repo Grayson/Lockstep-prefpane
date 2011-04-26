@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DAD6D7913675C700018F2F2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6D7813675C700018F2F2 /* Cocoa.framework */; };
+		1DAD6D7B13675C700018F2F2 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */; };
+		1DAD6D8513675C700018F2F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8313675C700018F2F2 /* InfoPlist.strings */; };
+		1DAD6D8813675C700018F2F2 /* Lockstep.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6D8713675C700018F2F2 /* Lockstep.h */; };
+		1DAD6D8A13675C700018F2F2 /* Lockstep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8913675C700018F2F2 /* Lockstep.m */; };
+		1DAD6D8C13675C700018F2F2 /* Lockstep.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */; };
+		1DAD6D8F13675C700018F2F2 /* Lockstep.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8D13675C700018F2F2 /* Lockstep.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lockstep.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DAD6D7813675C700018F2F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		1DAD6D7D13675C700018F2F2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1DAD6D7E13675C700018F2F2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DAD6D7F13675C700018F2F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DAD6D8213675C700018F2F2 /* Lockstep-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lockstep-Info.plist"; sourceTree = "<group>"; };
+		1DAD6D8413675C700018F2F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DAD6D8613675C700018F2F2 /* Lockstep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lockstep-Prefix.pch"; sourceTree = "<group>"; };
+		1DAD6D8713675C700018F2F2 /* Lockstep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lockstep.h; sourceTree = "<group>"; };
+		1DAD6D8913675C700018F2F2 /* Lockstep.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lockstep.m; sourceTree = "<group>"; };
+		1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Lockstep.tiff; sourceTree = "<group>"; };
+		1DAD6D8E13675C700018F2F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Lockstep.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DAD6D7013675C700018F2F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DAD6D7913675C700018F2F2 /* Cocoa.framework in Frameworks */,
+				1DAD6D7B13675C700018F2F2 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DAD6D6813675C700018F2F2 = {
+			isa = PBXGroup;
+			children = (
+				1DAD6D8013675C700018F2F2 /* Lockstep */,
+				1DAD6D7713675C700018F2F2 /* Frameworks */,
+				1DAD6D7613675C700018F2F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1DAD6D7613675C700018F2F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DAD6D7713675C700018F2F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD6D7813675C700018F2F2 /* Cocoa.framework */,
+				1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */,
+				1DAD6D7C13675C700018F2F2 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DAD6D7C13675C700018F2F2 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD6D7D13675C700018F2F2 /* AppKit.framework */,
+				1DAD6D7E13675C700018F2F2 /* CoreData.framework */,
+				1DAD6D7F13675C700018F2F2 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1DAD6D8013675C700018F2F2 /* Lockstep */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD6D8713675C700018F2F2 /* Lockstep.h */,
+				1DAD6D8913675C700018F2F2 /* Lockstep.m */,
+				1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */,
+				1DAD6D8D13675C700018F2F2 /* Lockstep.xib */,
+				1DAD6D8113675C700018F2F2 /* Supporting Files */,
+			);
+			path = Lockstep;
+			sourceTree = "<group>";
+		};
+		1DAD6D8113675C700018F2F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD6D8213675C700018F2F2 /* Lockstep-Info.plist */,
+				1DAD6D8313675C700018F2F2 /* InfoPlist.strings */,
+				1DAD6D8613675C700018F2F2 /* Lockstep-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1DAD6D7113675C700018F2F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DAD6D8813675C700018F2F2 /* Lockstep.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1DAD6D7413675C700018F2F2 /* Lockstep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DAD6D9213675C700018F2F2 /* Build configuration list for PBXNativeTarget "Lockstep" */;
+			buildPhases = (
+				1DAD6D6F13675C700018F2F2 /* Sources */,
+				1DAD6D7013675C700018F2F2 /* Frameworks */,
+				1DAD6D7113675C700018F2F2 /* Headers */,
+				1DAD6D7213675C700018F2F2 /* Resources */,
+				1DAD6D7313675C700018F2F2 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lockstep;
+			productName = Lockstep;
+			productReference = 1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1DAD6D6A13675C700018F2F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "From Concentrate Software";
+			};
+			buildConfigurationList = 1DAD6D6D13675C700018F2F2 /* Build configuration list for PBXProject "Lockstep" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1DAD6D6813675C700018F2F2;
+			productRefGroup = 1DAD6D7613675C700018F2F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DAD6D7413675C700018F2F2 /* Lockstep */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1DAD6D7213675C700018F2F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DAD6D8513675C700018F2F2 /* InfoPlist.strings in Resources */,
+				1DAD6D8C13675C700018F2F2 /* Lockstep.tiff in Resources */,
+				1DAD6D8F13675C700018F2F2 /* Lockstep.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		1DAD6D7313675C700018F2F2 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DAD6D6F13675C700018F2F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DAD6D8A13675C700018F2F2 /* Lockstep.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1DAD6D8313675C700018F2F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DAD6D8413675C700018F2F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DAD6D8D13675C700018F2F2 /* Lockstep.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DAD6D8E13675C700018F2F2 /* en */,
+			);
+			name = Lockstep.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DAD6D9013675C700018F2F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1DAD6D9113675C700018F2F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1DAD6D9313675C700018F2F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lockstep/Lockstep-Prefix.pch";
+				INFOPLIST_FILE = "Lockstep/Lockstep-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Debug;
+		};
+		1DAD6D9413675C700018F2F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lockstep/Lockstep-Prefix.pch";
+				INFOPLIST_FILE = "Lockstep/Lockstep-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DAD6D6D13675C700018F2F2 /* Build configuration list for PBXProject "Lockstep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DAD6D9013675C700018F2F2 /* Debug */,
+				1DAD6D9113675C700018F2F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DAD6D9213675C700018F2F2 /* Build configuration list for PBXNativeTarget "Lockstep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DAD6D9313675C700018F2F2 /* Debug */,
+				1DAD6D9413675C700018F2F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1DAD6D6A13675C700018F2F2 /* Project object */;
+}
