@@ -11,9 +11,13 @@
 
 @interface Lockstep : NSPreferencePane {
 @private
-    
+	IBOutlet NSTableView *_sourceTableView, *_targetTableView;
+	IBOutlet NSPopUpButton *_runEveryPopUpButton;
 }
 
 - (void)mainViewDidLoad;
+
+- (IBAction)changeRunTime:(id)sender;
+- (IBAction)activateLockstep:(id)sender;
 
 @end

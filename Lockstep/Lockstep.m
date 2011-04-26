@@ -15,4 +15,10 @@
 {
 }
 
+- (IBAction)changeRunTime:(id)sender {
+}
+
+- (IBAction)activateLockstep:(id)sender {
+}
+
 @end
