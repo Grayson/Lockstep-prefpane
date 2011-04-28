@@ -24,6 +24,10 @@
 	// Update GUI
 	[_toggleView setState:[LockstepCLI launchAgentIsRunning]];
 	[_toggleView display];
+	[_toggleView setTarget:self];
+	_toggleView.action = @selector(activateLockstep:);
+	NSLog(@"mainviewdidload %@", _toggleView);
+	NSLog(@"mainviewdidload %@", [_toggleView target]);
 	
 	NSDictionary *launchAgent = [NSDictionary dictionaryWithContentsOfFile:[LockstepCLI launchAgentPath]];
 	if (launchAgent) {
@@ -71,15 +75,15 @@
 - (IBAction)changeRunTime:(id)sender {
 	NSUInteger times[] = { 300, 600, 900, 1800, 3600, 7200, 14400 };
 	[LockstepCLI writeLaunchAgentWithTimeInterval:times[ _runEveryPopUpButton.indexOfSelectedItem ]];
-	[self restartLockstep];
+	if ([_toggleView state]) [self restartLockstep];
 }
 
 - (IBAction)activateLockstep:(id)sender {
-	if ([sender state]) {
-		[self changeRunTime:sender];
-		// [LockstepCLI startLaunchAgent];
+	if ([_toggleView state]) [self changeRunTime:sender];
+	else {
+		[LockstepCLI stopLaunchAgent];
+		[LockstepCLI removeLaunchAgent];
 	}
-	else [LockstepCLI stopLaunchAgent];
 }
 
 - (IBAction)addNewFileAssociation:(id)sender {

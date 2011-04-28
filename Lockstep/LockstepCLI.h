@@ -24,6 +24,7 @@
 +(BOOL)startLaunchAgent;
 +(BOOL)stopLaunchAgent;
 +(BOOL)writeLaunchAgentWithTimeInterval:(NSUInteger)seconds;
++(BOOL)removeLaunchAgent;
 
 +(NSString *)launchAgentPath;
 

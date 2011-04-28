@@ -82,29 +82,35 @@
 
 +(BOOL)startLaunchAgent {
 	[self _runTask:@"/bin/launchctl" withArguments:[NSArray arrayWithObjects:
-		@"load", [NSString stringWithFormat:@"~/Library/LaunchAgents/%@", LALABEL], nil]];
+		@"load", [LockstepCLI launchAgentPath], nil]];
 	return [self launchAgentIsRunning];
 }
 
 +(BOOL)stopLaunchAgent {
 	[self _runTask:@"/bin/launchctl" withArguments:[NSArray arrayWithObjects:
-		@"unload", [NSString stringWithFormat:@"~/Library/LaunchAgents/%@", LALABEL], nil]];
-	return ![self launchAgentIsRunning];
+		@"unload", [LockstepCLI launchAgentPath], nil]];
+		return [LockstepCLI launchAgentIsRunning];
 }
 
 +(BOOL)writeLaunchAgentWithTimeInterval:(NSUInteger)seconds {
 	NSDictionary *launchAgent = [NSDictionary dictionaryWithObjectsAndKeys:
 		LALABEL, @"label",
 		[NSArray arrayWithObject:[LockstepCLI localPath]], @"ProgramArguments",
-		[NSString stringWithFormat:@"%d", seconds], @"StartInterval",
+		[NSNumber numberWithUnsignedLong:seconds], @"StartInterval",
 		nil];
-	return [launchAgent writeToFile:[NSString stringWithFormat:@"~/Library/LaunchAgents/%@", LALABEL] atomically:YES];
+	return [launchAgent writeToFile:[LockstepCLI launchAgentPath] atomically:YES];
+}
+
++ (BOOL)removeLaunchAgent
+{
+	if ([LockstepCLI launchAgentIsRunning]) return NO;
+	return [[NSFileManager defaultManager] removeItemAtPath:[LockstepCLI launchAgentPath] error:nil];
 }
 
 +(NSString *)launchAgentPath {
 	NSString *launchAgentDirectoryPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Library"] stringByAppendingPathComponent:@"LaunchAgents"];
 	if (![[NSFileManager defaultManager] createDirectoryAtPath:launchAgentDirectoryPath withIntermediateDirectories:YES attributes:nil error:nil]) return nil;
-	return [launchAgentDirectoryPath stringByAppendingPathComponent:LALABEL];
+	return [[launchAgentDirectoryPath stringByAppendingPathComponent:LALABEL] stringByAppendingPathExtension:@"plist"];
 }
 
 @end

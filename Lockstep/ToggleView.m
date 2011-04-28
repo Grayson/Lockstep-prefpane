@@ -24,6 +24,8 @@
 @implementation ToggleView
 @synthesize isAnimating = _isAnimating;
 @synthesize animation = _animation;
+@synthesize target = _target;
+@synthesize action = _action;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -38,6 +40,7 @@
 - (void)dealloc
 {
 	self.animation = nil;
+	self.target = nil;
 	
     [super dealloc];
 }
@@ -57,6 +60,7 @@
 	self.animation.toggleView = self;
     [self.animation startAnimation];
 	self.animation = nil; // Done animating.
+	self.isAnimating = NO;
 }
 
 - (void)mouseUp:(NSEvent *)theEvent

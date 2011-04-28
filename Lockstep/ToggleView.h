@@ -22,10 +22,15 @@
 	BOOL _state;
 	BOOL _isAnimating;
 	
+	id _target;
+	SEL _action;
+	
 	ToggleViewAnimation *_animation;
 }
 @property (assign) BOOL state;
 @property (assign) BOOL isAnimating;
 @property (retain) ToggleViewAnimation *animation;
+@property (retain) id target;
+@property (assign) SEL action;
 
 @end
