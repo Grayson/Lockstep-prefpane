@@ -194,9 +194,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1DAD6D7413675C700018F2F2 /* Lockstep */ = {
+		1DAD6D7413675C700018F2F2 /* Doppelganger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DAD6D9213675C700018F2F2 /* Build configuration list for PBXNativeTarget "Lockstep" */;
+			buildConfigurationList = 1DAD6D9213675C700018F2F2 /* Build configuration list for PBXNativeTarget "Doppelganger" */;
 			buildPhases = (
 				1DAD6D6F13675C700018F2F2 /* Sources */,
 				1DAD6D7013675C700018F2F2 /* Frameworks */,
@@ -208,7 +208,7 @@
 			);
 			dependencies = (
 			);
-			name = Lockstep;
+			name = Doppelganger;
 			productName = Lockstep;
 			productReference = 1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */;
 			productType = "com.apple.product-type.bundle";
@@ -233,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1DAD6D7413675C700018F2F2 /* Lockstep */,
+				1DAD6D7413675C700018F2F2 /* Doppelganger */,
 			);
 		};
 /* End PBXProject section */
@@ -382,7 +382,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DAD6D9213675C700018F2F2 /* Build configuration list for PBXNativeTarget "Lockstep" */ = {
+		1DAD6D9213675C700018F2F2 /* Build configuration list for PBXNativeTarget "Doppelganger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DAD6D9313675C700018F2F2 /* Debug */,

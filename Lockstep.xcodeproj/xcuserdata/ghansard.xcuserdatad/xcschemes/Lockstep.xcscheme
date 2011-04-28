@@ -15,7 +15,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1DAD6D7413675C700018F2F2"
                BuildableName = "Lockstep.prefPane"
-               BlueprintName = "Lockstep"
+               BlueprintName = "Doppelganger"
                ReferencedContainer = "container:Lockstep.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

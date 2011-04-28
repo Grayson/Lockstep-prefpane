@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define LALABEL @"com.fromconcentratesoftware.locksteplaunchdaemon"
+#define LALABEL @"com.fromconcentratesoftware.doppelgangerlaunchdaemon"
 
 @interface LockstepCLI : NSObject {
     
