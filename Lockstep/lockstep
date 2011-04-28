@@ -1,1 +1,201 @@
-../lockstep/lockstep
+#!/usr/bin/env python
+# 2011, Grayson Hansard <info@fromconcentratesoftware.com>
+
+import hashlib
+import pickle
+import sys
+from os import path
+from shutil import copy2
+
+PREFS_PATH = path.expanduser('~/Library/Preferences/com.fromconcentratesoftware.lockstep.pickle')
+
+def md5DigestForFile(filepath):
+	if not path.exists(filepath) or path.isdir(filepath): return None
+	if not filepath: raise NameError('missing parameters')
+	m = hashlib.md5()
+	f = file(filepath)
+	if not f: raise IOError('file not found')
+	while True:
+		data = f.read(128)
+		if not data: break
+		m.update(data)
+	return m.digest()
+
+def fileAtPathMatchesHash(filepath, expected_hash):
+	"""Checks a file at _path_ to see if it has been modified.  Returns True if modified, False if unchanged."""
+	if path == None or expected_hash == None: raise NameError('missing parameters')
+	if not path.exists(filepath): return False
+	return expected_hash == md5DigestForFile(filepath)
+
+def storeNewTargetForSource(target, source):
+	"""Given a target and a source, save the target as a new file to check and replace when the source is updated."""
+	if target == None or source == None: raise NameError('missing parameters')
+	
+	prefs = None
+	if not path.exists(source):
+		print "The source file does not exists."
+		return
+	
+	f = None
+	if path.exists(PREFS_PATH):
+		try:
+			f = open(PREFS_PATH, 'r')
+		except Exception, e:
+			print e
+	
+	prefs = None
+	if f:
+		try:
+			prefs = pickle.load(f)
+		except Exception, e:
+			prefs = {}
+	else: prefs = {}
+	
+	if prefs.has_key(source): pref = prefs[source]
+	else: pref = []
+	
+	if not target in pref: 
+		pref.append(target)
+	prefs[source] = pref
+	pickle.dump(prefs, open(PREFS_PATH, 'w'))
+
+def overwriteFileWithFile(target, source):
+	"""Replaces the file at _target_ with a copy from _source_."""
+	try:
+		copy2(source, target)
+	except Exception, e:
+		print "Error: Could not copy file %s to %s" % (source, target)
+
+def performChecksForSourceOnTargets(source, targets):
+	"""Given a source file, compare it to all of the given targets."""
+	try:
+		digest = md5DigestForFile(source)
+	except Exception, e:
+		print "Error: %s" % (e)
+	
+	for target in targets:
+		if not fileAtPathMatchesHash(target, digest):
+			overwriteFileWithFile(target, source)
+
+def lockstep():
+	"""Main thrust of the application.  Begins the file checks, kicking off replacements when necessary."""
+	try:
+		f = file(PREFS_PATH)
+	except Exception, e:
+		print "Error: No files configured to be overseen."
+		return
+	prefs = pickle.load(f)
+	for source in prefs:
+		targets = prefs[source]
+		if not targets: continue
+		performChecksForSourceOnTargets(source, targets)
+
+def printPrefs():
+	prefs = None
+	try:
+		prefs = pickle.load(open(PREFS_PATH))
+	except Exception, e:
+		print "Error reading preferences."
+		return
+	print ""
+	for src in prefs:
+		print "%s:" % (src)
+		for target in prefs[src]:
+			print "	%s" % (target)
+		print ""
+
+def deleteAssocations(sources, targets):
+	"""Deletes the assocations between files"""
+	if sources == None:
+		print "Error: Must delete files associated with some source.  Don't forget the -s or --source arguments."
+		return
+	prefs = None
+	try:
+		prefs = pickle.load(open(PREFS_PATH))
+	except Exception, e:
+		print "Error reading preferences."
+		return
+	for src in sources:
+		if not prefs.has_key(src): continue;
+		if not targets:
+			del prefs[src]
+			continue
+		tmp = prefs[src]
+		for tgt in targets:
+			tmp.remove(tgt)
+		prefs[src] = tmp
+	try:
+		pickle.dump(prefs, open(PREFS_PATH, 'w'))
+	except Exception, e:
+		print "Error writing out preferences."
+
+
+def help():
+	print """
+lockstep v%s.
+
+	To add a file:
+		lockstep -s /path/to/source -t /path/to/target
+
+	Run without arguments to match files.
+	
+	Flags:
+		-s, --source	A source file to synchronize to other locations.
+		-t, --target	The target location for a file to be 
+				synchronized, including filename.
+		-d, --delete	Deletes the file associations.  If only a source
+				is given, delete all associations with that 
+				source.  If a source and a target is given, 
+				delete only that association.
+		-h, --help	View this help documentation.
+		--showfiles	Shows file associations.
+""" % ('1.1')
+
+def parseArgs(args):
+	last_flag = None
+	lonely = []
+	parsedArgs = {}
+	for arg in args:
+		if arg[0] == '-':
+			last_flag = arg
+			parsedArgs[last_flag] = parsedArgs[last_flag] if parsedArgs.has_key(last_flag) else []			
+		else:
+			if last_flag == None: lonely.append(arg)
+			else:
+				tmp = parsedArgs[last_flag] if parsedArgs.has_key(last_flag) else []
+				tmp.append(arg)
+				parsedArgs[last_flag] = tmp
+	parsedArgs['args'] = args
+	parsedArgs['unaffiliated'] = lonely
+	return parsedArgs
+
+def main():
+	args = parseArgs(sys.argv[1:])
+		
+	show_help = args.has_key('-h') or args.has_key('--help')
+	show_files = args.has_key('--showfiles')
+	should_delete = args.has_key('-d') or args.has_key('--delete')
+	targets = args['-t'] if args.has_key('-t') else args['--target'] if args.has_key('--target') else None
+	sources = args['-s'] if args.has_key('-s') else args['--source'] if args.has_key('--source') else None
+	
+	if targets: targets = [path.abspath(x) for x in targets]
+	if sources: sources = [path.abspath(x) for x in sources]
+	
+	if show_help:
+		help()
+		return
+	elif show_files:
+		printPrefs()
+		return
+	elif should_delete:
+		deleteAssocations(sources, targets)
+	elif targets and sources:
+		print "Adding new association for file(s) %s" % (sources)
+		for src in sources:
+			for tgt in targets:
+				storeNewTargetForSource(tgt, src)
+	else:
+		lockstep()
+
+if __name__ == '__main__':
+	main()

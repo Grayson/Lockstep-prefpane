@@ -7,17 +7,32 @@
 //
 
 #import <PreferencePanes/PreferencePanes.h>
-
+#import "LockstepCLI.h"
+#import "AddAssociationController.h"
 
 @interface Lockstep : NSPreferencePane {
 @private
 	IBOutlet NSTableView *_sourceTableView, *_targetTableView;
 	IBOutlet NSPopUpButton *_runEveryPopUpButton;
+	IBOutlet NSArrayController *_sourceArrayController;
+	
+	NSDictionary *_associations;
+    NSArray *_sourceList;
+	AddAssociationController *_associationController;
 }
+@property (retain) NSDictionary *associations;
+@property (retain) NSArray *sourceList;
+@property (retain) AddAssociationController *associationController;
 
 - (void)mainViewDidLoad;
 
 - (IBAction)changeRunTime:(id)sender;
 - (IBAction)activateLockstep:(id)sender;
+- (IBAction)addNewFileAssociation:(id)sender;
+
+- (IBAction)delete:(id)sender;
+
+- (void)reloadAssociations;
+- (void)restartLockstep;
 
 @end
