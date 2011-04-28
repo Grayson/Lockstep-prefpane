@@ -9,12 +9,14 @@
 #import <PreferencePanes/PreferencePanes.h>
 #import "LockstepCLI.h"
 #import "AddAssociationController.h"
+#import "ToggleView.h"
 
 @interface Lockstep : NSPreferencePane {
 @private
 	IBOutlet NSTableView *_sourceTableView, *_targetTableView;
 	IBOutlet NSPopUpButton *_runEveryPopUpButton;
 	IBOutlet NSArrayController *_sourceArrayController;
+	IBOutlet ToggleView *_toggleView;
 	
 	NSDictionary *_associations;
     NSArray *_sourceList;

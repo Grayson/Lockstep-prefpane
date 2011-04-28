@@ -25,6 +25,15 @@
 		1DAD6DAE13686BEA0018F2F2 /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6DAD13686BEA0018F2F2 /* dots.png */; };
 		1DAD6DB113686FB20018F2F2 /* SourceTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6DAF13686FB20018F2F2 /* SourceTableView.h */; };
 		1DAD6DB213686FB20018F2F2 /* SourceTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DB013686FB20018F2F2 /* SourceTableView.m */; };
+		1DAD6DD7136905210018F2F2 /* AcceptsDeleteKeyTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6DD2136905210018F2F2 /* AcceptsDeleteKeyTableView.h */; };
+		1DAD6DD8136905210018F2F2 /* AcceptsDeleteKeyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DD3136905210018F2F2 /* AcceptsDeleteKeyTableView.m */; };
+		1DAD6DD9136905210018F2F2 /* AddAssociationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6DD4136905210018F2F2 /* AddAssociationController.h */; };
+		1DAD6DDA136905210018F2F2 /* AddAssociationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DD5136905210018F2F2 /* AddAssociationController.m */; };
+		1DAD6DDB136905210018F2F2 /* AddAssociationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6DD6136905210018F2F2 /* AddAssociationView.xib */; };
+		1DAD6DE1136905400018F2F2 /* SlideView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6DDD136905400018F2F2 /* SlideView.h */; };
+		1DAD6DE2136905400018F2F2 /* SlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DDE136905400018F2F2 /* SlideView.m */; };
+		1DAD6DE3136905400018F2F2 /* ToggleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6DDF136905400018F2F2 /* ToggleView.h */; };
+		1DAD6DE4136905400018F2F2 /* ToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DE0136905400018F2F2 /* ToggleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +61,15 @@
 		1DAD6DAD13686BEA0018F2F2 /* dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dots.png; sourceTree = "<group>"; };
 		1DAD6DAF13686FB20018F2F2 /* SourceTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceTableView.h; sourceTree = "<group>"; };
 		1DAD6DB013686FB20018F2F2 /* SourceTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTableView.m; sourceTree = "<group>"; };
+		1DAD6DD2136905210018F2F2 /* AcceptsDeleteKeyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptsDeleteKeyTableView.h; sourceTree = "<group>"; };
+		1DAD6DD3136905210018F2F2 /* AcceptsDeleteKeyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptsDeleteKeyTableView.m; sourceTree = "<group>"; };
+		1DAD6DD4136905210018F2F2 /* AddAssociationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAssociationController.h; sourceTree = "<group>"; };
+		1DAD6DD5136905210018F2F2 /* AddAssociationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAssociationController.m; sourceTree = "<group>"; };
+		1DAD6DD6136905210018F2F2 /* AddAssociationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAssociationView.xib; sourceTree = "<group>"; };
+		1DAD6DDD136905400018F2F2 /* SlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideView.h; sourceTree = "<group>"; };
+		1DAD6DDE136905400018F2F2 /* SlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideView.m; sourceTree = "<group>"; };
+		1DAD6DDF136905400018F2F2 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
+		1DAD6DE0136905400018F2F2 /* ToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +130,20 @@
 				1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */,
 				1DAD6D9E136762E20018F2F2 /* LockstepCLI.h */,
 				1DAD6D9F136762E20018F2F2 /* LockstepCLI.m */,
-				1DAD6D8D13675C700018F2F2 /* Lockstep.xib */,
+				1DAD6DD2136905210018F2F2 /* AcceptsDeleteKeyTableView.h */,
+				1DAD6DD3136905210018F2F2 /* AcceptsDeleteKeyTableView.m */,
+				1DAD6DD4136905210018F2F2 /* AddAssociationController.h */,
+				1DAD6DD5136905210018F2F2 /* AddAssociationController.m */,
 				1DAD6DAF13686FB20018F2F2 /* SourceTableView.h */,
 				1DAD6DB013686FB20018F2F2 /* SourceTableView.m */,
 				1DAD6DA9136856E70018F2F2 /* PathToIconTransformer.h */,
 				1DAD6DAA136856E70018F2F2 /* PathToIconTransformer.m */,
+				1DAD6DDD136905400018F2F2 /* SlideView.h */,
+				1DAD6DDE136905400018F2F2 /* SlideView.m */,
+				1DAD6DDF136905400018F2F2 /* ToggleView.h */,
+				1DAD6DE0136905400018F2F2 /* ToggleView.m */,
+				1DAD6DD6136905210018F2F2 /* AddAssociationView.xib */,
+				1DAD6D8D13675C700018F2F2 /* Lockstep.xib */,
 				1DAD6D8113675C700018F2F2 /* Supporting Files */,
 			);
 			path = Lockstep;
@@ -157,6 +184,10 @@
 				1DAD6DA7136856850018F2F2 /* RSVerticallyCenteredTextFieldCell.h in Headers */,
 				1DAD6DAB136856E70018F2F2 /* PathToIconTransformer.h in Headers */,
 				1DAD6DB113686FB20018F2F2 /* SourceTableView.h in Headers */,
+				1DAD6DD7136905210018F2F2 /* AcceptsDeleteKeyTableView.h in Headers */,
+				1DAD6DD9136905210018F2F2 /* AddAssociationController.h in Headers */,
+				1DAD6DE1136905400018F2F2 /* SlideView.h in Headers */,
+				1DAD6DE3136905400018F2F2 /* ToggleView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +249,7 @@
 				1DAD6D9C136762790018F2F2 /* lockstep in Resources */,
 				1DAD6DA6136856850018F2F2 /* MIT-License.rtf in Resources */,
 				1DAD6DAE13686BEA0018F2F2 /* dots.png in Resources */,
+				1DAD6DDB136905210018F2F2 /* AddAssociationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +275,10 @@
 				1DAD6DA8136856850018F2F2 /* RSVerticallyCenteredTextFieldCell.m in Sources */,
 				1DAD6DAC136856E70018F2F2 /* PathToIconTransformer.m in Sources */,
 				1DAD6DB213686FB20018F2F2 /* SourceTableView.m in Sources */,
+				1DAD6DD8136905210018F2F2 /* AcceptsDeleteKeyTableView.m in Sources */,
+				1DAD6DDA136905210018F2F2 /* AddAssociationController.m in Sources */,
+				1DAD6DE2136905400018F2F2 /* SlideView.m in Sources */,
+				1DAD6DE4136905400018F2F2 /* ToggleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

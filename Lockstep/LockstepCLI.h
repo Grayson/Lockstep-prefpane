@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define LALABEL @"com.fromconcentratesoftware.locksteplaunchdaemon"
 
 @interface LockstepCLI : NSObject {
     
@@ -18,5 +19,12 @@
 +(void)removeAssociationsForSource:(NSString *)source;
 +(void)removeAssociationForSource:(NSString *)source target:(NSString *)target;
 +(void)addAssociationForSource:(NSString *)source target:(NSString *)target;
+
++(BOOL)launchAgentIsRunning;
++(BOOL)startLaunchAgent;
++(BOOL)stopLaunchAgent;
++(BOOL)writeLaunchAgentWithTimeInterval:(NSUInteger)seconds;
+
++(NSString *)launchAgentPath;
 
 @end

@@ -19,13 +19,13 @@
 
 @interface ToggleView : NSControl {
 @private
-	bool _state;
-	bool _isAnimating;
+	BOOL _state;
+	BOOL _isAnimating;
 	
 	ToggleViewAnimation *_animation;
 }
-@property (assign) bool state;
-@property (assign) bool isAnimating;
+@property (assign) BOOL state;
+@property (assign) BOOL isAnimating;
 @property (retain) ToggleViewAnimation *animation;
 
 @end

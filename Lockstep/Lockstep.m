@@ -20,7 +20,42 @@
 	
 	_sourceTableView.target = self;
 	_targetTableView.target = self;
-
+	
+	// Update GUI
+	[_toggleView setState:[LockstepCLI launchAgentIsRunning]];
+	[_toggleView display];
+	
+	NSDictionary *launchAgent = [NSDictionary dictionaryWithContentsOfFile:[LockstepCLI launchAgentPath]];
+	if (launchAgent) {
+		NSUInteger interval = [[launchAgent objectForKey:@"StartInterval"] intValue];
+		NSUInteger index = 0;
+		switch(interval) {
+			case 300:
+			default:
+				break;
+			case 600:
+				index = 1;
+				break;
+			case 900:
+				index = 2;
+				break;
+			case 1800:
+				index = 3;
+				break;
+			case 3600:
+				index = 4;
+				break;
+			case 7200:
+				index = 5;
+				break;
+			case 14400:
+				index = 6;
+				break;
+		}
+		[_runEveryPopUpButton selectItemAtIndex:index];
+	}
+	
+	
 	[self reloadAssociations];
 }
 
@@ -34,9 +69,17 @@
 }
 
 - (IBAction)changeRunTime:(id)sender {
+	NSUInteger times[] = { 300, 600, 900, 1800, 3600, 7200, 14400 };
+	[LockstepCLI writeLaunchAgentWithTimeInterval:times[ _runEveryPopUpButton.indexOfSelectedItem ]];
+	[self restartLockstep];
 }
 
 - (IBAction)activateLockstep:(id)sender {
+	if ([sender state]) {
+		[self changeRunTime:sender];
+		// [LockstepCLI startLaunchAgent];
+	}
+	else [LockstepCLI stopLaunchAgent];
 }
 
 - (IBAction)addNewFileAssociation:(id)sender {
@@ -122,6 +165,8 @@
 }
 
 - (void)restartLockstep {
+	if ([LockstepCLI launchAgentIsRunning]) [LockstepCLI stopLaunchAgent];
+	[LockstepCLI startLaunchAgent];
 }
 
 @end

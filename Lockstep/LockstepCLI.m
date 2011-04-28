@@ -11,6 +11,7 @@
 @interface LockstepCLI (PrivateMethods)
 
 +(NSString *)_runWithArguments:(NSArray *)args;
++(NSString *)_runTask:(NSString *)taskPath withArguments:(NSArray *)args;
 
 @end
 
@@ -55,10 +56,14 @@
 }
 
 +(NSString *)_runWithArguments:(NSArray *)args {
+	return [self _runTask:[LockstepCLI localPath] withArguments:args];
+}
+
++(NSString *)_runTask:(NSString *)taskPath withArguments:(NSArray *)args {
 	NSTask *t = [[NSTask new] autorelease];
 	NSPipe *pipe = [NSPipe pipe];
 	NSFileHandle *fh = [pipe fileHandleForReading];
-	t.launchPath = [LockstepCLI localPath];
+	t.launchPath = taskPath;
 	t.arguments = args;
 	t.standardOutput = pipe;
 	t.standardInput = [NSPipe pipe];
@@ -68,6 +73,38 @@
 	
 	NSData *d = [fh readDataToEndOfFile];
 	return [[[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding] autorelease];
+}
+
++(BOOL)launchAgentIsRunning {
+	NSString *tmp = [self _runTask:@"/bin/launchctl" withArguments:[NSArray arrayWithObject:@"list"]];
+	return [tmp rangeOfString:LALABEL].location != NSNotFound;
+}
+
++(BOOL)startLaunchAgent {
+	[self _runTask:@"/bin/launchctl" withArguments:[NSArray arrayWithObjects:
+		@"load", [NSString stringWithFormat:@"~/Library/LaunchAgents/%@", LALABEL], nil]];
+	return [self launchAgentIsRunning];
+}
+
++(BOOL)stopLaunchAgent {
+	[self _runTask:@"/bin/launchctl" withArguments:[NSArray arrayWithObjects:
+		@"unload", [NSString stringWithFormat:@"~/Library/LaunchAgents/%@", LALABEL], nil]];
+	return ![self launchAgentIsRunning];
+}
+
++(BOOL)writeLaunchAgentWithTimeInterval:(NSUInteger)seconds {
+	NSDictionary *launchAgent = [NSDictionary dictionaryWithObjectsAndKeys:
+		LALABEL, @"label",
+		[NSArray arrayWithObject:[LockstepCLI localPath]], @"ProgramArguments",
+		[NSString stringWithFormat:@"%d", seconds], @"StartInterval",
+		nil];
+	return [launchAgent writeToFile:[NSString stringWithFormat:@"~/Library/LaunchAgents/%@", LALABEL] atomically:YES];
+}
+
++(NSString *)launchAgentPath {
+	NSString *launchAgentDirectoryPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Library"] stringByAppendingPathComponent:@"LaunchAgents"];
+	if (![[NSFileManager defaultManager] createDirectoryAtPath:launchAgentDirectoryPath withIntermediateDirectories:YES attributes:nil error:nil]) return nil;
+	return [launchAgentDirectoryPath stringByAppendingPathComponent:LALABEL];
 }
 
 @end
