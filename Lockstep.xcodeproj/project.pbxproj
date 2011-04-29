@@ -35,10 +35,14 @@
 		1DAD6DE3136905400018F2F2 /* ToggleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6DDF136905400018F2F2 /* ToggleView.h */; };
 		1DAD6DE4136905400018F2F2 /* ToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DE0136905400018F2F2 /* ToggleView.m */; };
 		1DAD6DE61369B9030018F2F2 /* SourceTableBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6DE51369B9030018F2F2 /* SourceTableBackground.png */; };
+		1DB65D5C136AF81C006F0C86 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB65D5B136AF81C006F0C86 /* AboutView.xib */; };
+		1DB65D60136AF8AC006F0C86 /* AboutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB65D5E136AF8AC006F0C86 /* AboutController.h */; };
+		1DB65D61136AF8AC006F0C86 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65D5F136AF8AC006F0C86 /* AboutController.m */; };
+		1DB65D63136AFB1C006F0C86 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB65D62136AFB1C006F0C86 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lockstep.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Lockstep.prefPane; path = Doppelganger.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD6D7813675C700018F2F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
 		1DAD6D7D13675C700018F2F2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -72,6 +76,10 @@
 		1DAD6DDF136905400018F2F2 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
 		1DAD6DE0136905400018F2F2 /* ToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleView.m; sourceTree = "<group>"; };
 		1DAD6DE51369B9030018F2F2 /* SourceTableBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SourceTableBackground.png; sourceTree = "<group>"; };
+		1DB65D5B136AF81C006F0C86 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
+		1DB65D5E136AF8AC006F0C86 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		1DB65D5F136AF8AC006F0C86 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		1DB65D62136AFB1C006F0C86 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,8 @@
 				1DAD6DD3136905210018F2F2 /* AcceptsDeleteKeyTableView.m */,
 				1DAD6DD4136905210018F2F2 /* AddAssociationController.h */,
 				1DAD6DD5136905210018F2F2 /* AddAssociationController.m */,
+				1DB65D5E136AF8AC006F0C86 /* AboutController.h */,
+				1DB65D5F136AF8AC006F0C86 /* AboutController.m */,
 				1DAD6DAF13686FB20018F2F2 /* SourceTableView.h */,
 				1DAD6DB013686FB20018F2F2 /* SourceTableView.m */,
 				1DAD6DA9136856E70018F2F2 /* PathToIconTransformer.h */,
@@ -145,6 +155,7 @@
 				1DAD6DDF136905400018F2F2 /* ToggleView.h */,
 				1DAD6DE0136905400018F2F2 /* ToggleView.m */,
 				1DAD6DD6136905210018F2F2 /* AddAssociationView.xib */,
+				1DB65D5B136AF81C006F0C86 /* AboutView.xib */,
 				1DAD6D8D13675C700018F2F2 /* Lockstep.xib */,
 				1DAD6D8113675C700018F2F2 /* Supporting Files */,
 			);
@@ -158,6 +169,7 @@
 				1DAD6D8213675C700018F2F2 /* Lockstep-Info.plist */,
 				1DAD6DAD13686BEA0018F2F2 /* dots.png */,
 				1DAD6DE51369B9030018F2F2 /* SourceTableBackground.png */,
+				1DB65D62136AFB1C006F0C86 /* Credits.rtf */,
 				1DAD6D8313675C700018F2F2 /* InfoPlist.strings */,
 				1DAD6D8613675C700018F2F2 /* Lockstep-Prefix.pch */,
 			);
@@ -191,6 +203,7 @@
 				1DAD6DD9136905210018F2F2 /* AddAssociationController.h in Headers */,
 				1DAD6DE1136905400018F2F2 /* SlideView.h in Headers */,
 				1DAD6DE3136905400018F2F2 /* ToggleView.h in Headers */,
+				1DB65D60136AF8AC006F0C86 /* AboutController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +267,8 @@
 				1DAD6DAE13686BEA0018F2F2 /* dots.png in Resources */,
 				1DAD6DDB136905210018F2F2 /* AddAssociationView.xib in Resources */,
 				1DAD6DE61369B9030018F2F2 /* SourceTableBackground.png in Resources */,
+				1DB65D5C136AF81C006F0C86 /* AboutView.xib in Resources */,
+				1DB65D63136AFB1C006F0C86 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +298,7 @@
 				1DAD6DDA136905210018F2F2 /* AddAssociationController.m in Sources */,
 				1DAD6DE2136905400018F2F2 /* SlideView.m in Sources */,
 				1DAD6DE4136905400018F2F2 /* ToggleView.m in Sources */,
+				1DB65D61136AF8AC006F0C86 /* AboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

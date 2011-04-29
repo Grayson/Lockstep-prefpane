@@ -13,10 +13,11 @@
 @synthesize associations = _associations;
 @synthesize sourceList = _sourceList;
 @synthesize associationController = _associationController;
+@synthesize aboutController = _aboutController;
 
 - (void)mainViewDidLoad
 {
-	// freopen("/Users/ghansard/Desktop/lockstep.log", "a", stderr);
+	freopen("/Users/ghansard/Desktop/lockstep.log", "a", stderr);
 	
 	_sourceTableView.target = self;
 	_targetTableView.target = self;
@@ -66,6 +67,7 @@
 	self.associations = nil;
 	self.sourceList = nil;
 	self.associationController = nil;
+	self.aboutController = nil;
 	
 	[super dealloc];
 }
@@ -90,6 +92,13 @@
 		self.associationController.delegate = self;
 	}
 	[self.associationController showInView:_runEveryPopUpButton.superview];
+}
+
+- (IBAction)showAboutSheet:(id)sender {
+	if (!self.aboutController) {
+		self.aboutController = [[LockstepAboutController new] autorelease];
+	}
+	[self.aboutController showInView:_runEveryPopUpButton.superview];
 }
 
 - (IBAction)delete:(id)sender {

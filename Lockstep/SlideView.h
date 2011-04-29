@@ -12,10 +12,14 @@
 @interface SlideView : NSView {
 @private
 	NSArray *_disabledControls;
+	BOOL _adjustedForShadow;
 }
 @property (retain) NSArray *disabledControls;
+@property (assign) BOOL adjustedForShadow;
 
 - (void)showInView:(NSView *)view;
 - (IBAction)close:(id)sender;
+
+- (void)_adjustForShadow;
 
 @end

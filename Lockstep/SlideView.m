@@ -11,15 +11,20 @@
 
 @implementation SlideView
 @synthesize disabledControls = _disabledControls;
+@synthesize adjustedForShadow = _adjustedForShadow;
 
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
+	if (!self) return nil;
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aCoder
+{
+	self = [super initWithCoder:aCoder];
+	if (!self) return nil;
+	return self;
 }
 
 - (void)dealloc
@@ -27,6 +32,22 @@
 	self.disabledControls = nil;
 	
     [super dealloc];
+}
+
+- (void)_adjustForShadow {
+	NSRect f = self.frame;
+	f.size.width += 10;
+	f.size.height += 5;
+	self.frame = f;
+	
+	void (^adjustOrigin)(NSView *, NSUInteger, BOOL *) = ^(NSView * view, NSUInteger index, BOOL *stop) {
+		NSRect f = view.frame;
+		// f.origin.y -= 5;
+		f.origin.x += 5;
+		view.frame = f;
+	};
+	[[self subviews] enumerateObjectsUsingBlock:adjustOrigin];
+	self.adjustedForShadow = YES;
 }
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -42,17 +63,20 @@
 	rect.origin.y += 5.;
 	rect.size.height -= 5.;
 	
-	[[NSColor windowBackgroundColor] set];
+	// [[[NSColor windowBackgroundColor] colorWithAlphaComponent:0.9] set];
+	[[NSColor colorWithCalibratedRed:0xff/0xe3 green:0xff/0xe6 blue:0xff/0xea alpha:0.9] set];
 	[shadow set];
 	[[NSBezierPath bezierPathWithRect:rect] fill];
 	
 	[shadow release];
+	
+	// #E3E6EA
 }
 
 
 - (void)showInView:(NSView *)view {
 	if ([self superview]) [self removeFromSuperview];
-	[view addSubview:self];
+	if (!self.adjustedForShadow) [self _adjustForShadow];
 	
 	NSPoint origin = view.frame.origin;
 	NSSize size = view.frame.size;
@@ -65,6 +89,10 @@
 	startFrame.origin = NSMakePoint( xPos, origin.y + size.height );
 	endFrame.origin = NSMakePoint( xPos, origin.y + size.height - endFrame.size.height );
 	
+	self.frame = startFrame;
+	
+	[view addSubview:self];
+	
 	// Do animations
 	NSArray *viewAnimations = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:
 		self, NSViewAnimationTargetKey,
@@ -76,14 +104,21 @@
 	[animation startAnimation];
 	
 	// Disable the controls on the original view
-	NSMutableArray *disabled = [NSMutableArray array];
-	for (NSView *subview in [[view superview] subviews]) {
-		if (subview == self) continue;
-		if (![subview isKindOfClass:[NSControl class]]) continue; // only NSControls can be enabled.
-		if (![(NSControl *)subview isEnabled]) continue; // skip the already disabled ones
-		[(NSControl *)subview setEnabled:NO];
-		[disabled addObject:subview];
-	}
+	__block NSMutableArray *disabled = [NSMutableArray array];
+	__block void (^disableSubviews)(NSView *) = ^(NSView *view) {
+		for (NSView *subview in [view subviews]) {
+			if (subview == self) continue;
+			if (![subview isKindOfClass:[NSControl class]]) {
+				disableSubviews(subview); // Recurse deeper
+				continue;
+			}
+			if (![(NSControl *)subview isEnabled]) continue; // skip the already disabled ones
+			[(NSControl *)subview setEnabled:NO];
+			[disabled addObject:subview];
+		}
+	};
+	disableSubviews([self superview]);
+	self.disabledControls = disabled;
 }
 
 - (IBAction)close:(id)sender {

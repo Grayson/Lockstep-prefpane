@@ -10,6 +10,7 @@
 #import "LockstepCLI.h"
 #import "AddAssociationController.h"
 #import "ToggleView.h"
+#import "AboutController.h"
 
 @interface Lockstep : NSPreferencePane {
 @private
@@ -21,16 +22,19 @@
 	NSDictionary *_associations;
     NSArray *_sourceList;
 	AddAssociationController *_associationController;
+	LockstepAboutController *_aboutController;
 }
 @property (retain) NSDictionary *associations;
 @property (retain) NSArray *sourceList;
 @property (retain) AddAssociationController *associationController;
+@property (retain) LockstepAboutController *aboutController;
 
 - (void)mainViewDidLoad;
 
 - (IBAction)changeRunTime:(id)sender;
 - (IBAction)activateLockstep:(id)sender;
 - (IBAction)addNewFileAssociation:(id)sender;
+- (IBAction)showAboutSheet:(id)sender;
 
 - (IBAction)delete:(id)sender;
 

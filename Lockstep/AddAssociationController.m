@@ -39,7 +39,7 @@
 
 - (void)dealloc
 {
-	[_topLevelObjects makeObjectsPerformSelector:@selector(release)];
+	[self.topLevelObjects makeObjectsPerformSelector:@selector(release)];
 	self.topLevelObjects = nil;
 	
 	self.delegate = nil;
