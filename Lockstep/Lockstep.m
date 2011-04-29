@@ -16,7 +16,7 @@
 
 - (void)mainViewDidLoad
 {
-	freopen("/Users/ghansard/Desktop/lockstep.log", "a", stderr);
+	// freopen("/Users/ghansard/Desktop/lockstep.log", "a", stderr);
 	
 	_sourceTableView.target = self;
 	_targetTableView.target = self;
@@ -26,8 +26,6 @@
 	[_toggleView display];
 	[_toggleView setTarget:self];
 	_toggleView.action = @selector(activateLockstep:);
-	NSLog(@"mainviewdidload %@", _toggleView);
-	NSLog(@"mainviewdidload %@", [_toggleView target]);
 	
 	NSDictionary *launchAgent = [NSDictionary dictionaryWithContentsOfFile:[LockstepCLI launchAgentPath]];
 	if (launchAgent) {
@@ -143,7 +141,7 @@
 		shadow, NSShadowAttributeName,
 		nil];
 	NSDictionary *pathAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-		[NSColor lightGrayColor], NSForegroundColorAttributeName,
+		[NSColor controlHighlightColor], NSForegroundColorAttributeName,
 		pStyle, NSParagraphStyleAttributeName,
 		nil];
     for (index = 0; index < count; index++) {

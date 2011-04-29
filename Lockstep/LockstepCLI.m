@@ -19,7 +19,7 @@
 
 +(NSString *)localPath {
     
-	NSBundle *b = [NSBundle bundleWithIdentifier:@"com.fromconcentratesoftware.Lockstep"];
+	NSBundle *b = [NSBundle bundleWithIdentifier:@"com.fromconcentratesoftware.Doppelganger"];
 	return [b pathForResource:@"lockstep" ofType:@""];
 }
 

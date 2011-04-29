@@ -22,7 +22,7 @@
 			self, NSNibOwner,
 			topLevelObjects, NSNibTopLevelObjects,
 			nil];
-		NSBundle *b = [NSBundle bundleWithIdentifier:@"com.fromconcentratesoftware.Lockstep"];
+		NSBundle *b = [NSBundle bundleWithIdentifier:@"com.fromconcentratesoftware.Doppelganger"];
 		[b loadNibFile:@"AddAssociationView" externalNameTable:nameTable withZone:[self zone]];
 		
 		self.topLevelObjects = topLevelObjects;
@@ -53,48 +53,11 @@
 	[_chooseTargetButton setEnabled:NO];
 	[_addButton setEnabled:NO];
 	
-	if ([_view superview]) [_view removeFromSuperview];
-	[view addSubview:_view];
-	
-	NSPoint origin = view.frame.origin;
-	NSSize size = view.frame.size;
-	
-	NSRect startFrame = _view.frame;
-	NSRect endFrame = _view.frame;
-	
-	float xPos = (origin.x + size.width - startFrame.size.width) / 2.;
-	
-	startFrame.origin = NSMakePoint( xPos, origin.y + size.height );
-	endFrame.origin = NSMakePoint( xPos, origin.y + size.height - endFrame.size.height );
-	
-	// Do animations
-	NSArray *viewAnimations = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:
-		_view, NSViewAnimationTargetKey,
-		[NSValue valueWithRect: startFrame], NSViewAnimationStartFrameKey,
-		[NSValue valueWithRect: endFrame], NSViewAnimationEndFrameKey,
-		nil], nil];
-	NSViewAnimation *animation = [[[NSViewAnimation alloc] initWithViewAnimations:viewAnimations] autorelease];
-	animation.duration = 0.2;
-	[animation startAnimation];
+	[_view showInView:view];
 }
 
 - (void)close {
-	NSRect startFrame = _view.frame;
-	NSRect endFrame = _view.frame;
-	
-	endFrame.origin.y = endFrame.origin.y + endFrame.size.height;
-	
-	NSArray *viewAnimations = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:
-		_view, NSViewAnimationTargetKey,
-		[NSValue valueWithRect: startFrame], NSViewAnimationStartFrameKey,
-		[NSValue valueWithRect: endFrame], NSViewAnimationEndFrameKey,
-		nil], nil];
-	NSViewAnimation *animation = [[[NSViewAnimation alloc] initWithViewAnimations:viewAnimations] autorelease];
-	animation.duration = 0.2;
-	animation.animationBlockingMode = NSAnimationBlocking;
-	[animation startAnimation];
-	
-	[_view removeFromSuperview];
+	[_view close:nil];
 }
 
 - (IBAction)chooseSource:(id)sender {

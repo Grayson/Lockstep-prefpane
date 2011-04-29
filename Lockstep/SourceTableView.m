@@ -24,8 +24,8 @@
 	self = [super initWithCoder:aCoder];
 	if (!self) return nil;
 	
-	NSBundle *b = [NSBundle bundleWithIdentifier:@"com.fromconcentratesoftware.Lockstep"];
-	NSImage *dots = [[[NSImage alloc] initByReferencingFile:[b pathForImageResource:@"dots.png"]] autorelease];
+	NSBundle *b = [NSBundle bundleWithIdentifier:@"com.fromconcentratesoftware.Doppelganger"];
+	NSImage *dots = [[[NSImage alloc] initByReferencingFile:[b pathForImageResource:@"SourceTableBackground.png"]] autorelease];
 	[self setBackgroundColor:[NSColor colorWithPatternImage:dots]];
 	
 	
@@ -37,7 +37,7 @@
 	NSIndexSet *set = [self selectedRowIndexes];
 	[set enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
 		NSRect rowRect = [self rectOfRow:idx];
-		NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[[NSColor selectedControlColor] shadowWithLevel:0.3] endingColor:[NSColor alternateSelectedControlColor]];
+		NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor selectedControlColor] endingColor:[NSColor alternateSelectedControlColor]];
 		[gradient drawInRect:rowRect angle:90.];
 		
 		[[NSColor selectedControlColor] set];

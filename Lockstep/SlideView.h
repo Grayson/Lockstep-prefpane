@@ -11,7 +11,11 @@
 
 @interface SlideView : NSView {
 @private
-    
+	NSArray *_disabledControls;
 }
+@property (retain) NSArray *disabledControls;
+
+- (void)showInView:(NSView *)view;
+- (IBAction)close:(id)sender;
 
 @end

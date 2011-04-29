@@ -34,6 +34,7 @@
 		1DAD6DE2136905400018F2F2 /* SlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DDE136905400018F2F2 /* SlideView.m */; };
 		1DAD6DE3136905400018F2F2 /* ToggleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6DDF136905400018F2F2 /* ToggleView.h */; };
 		1DAD6DE4136905400018F2F2 /* ToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6DE0136905400018F2F2 /* ToggleView.m */; };
+		1DAD6DE61369B9030018F2F2 /* SourceTableBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6DE51369B9030018F2F2 /* SourceTableBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		1DAD6DDE136905400018F2F2 /* SlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideView.m; sourceTree = "<group>"; };
 		1DAD6DDF136905400018F2F2 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
 		1DAD6DE0136905400018F2F2 /* ToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleView.m; sourceTree = "<group>"; };
+		1DAD6DE51369B9030018F2F2 /* SourceTableBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SourceTableBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				1DAD6DA21368560C0018F2F2 /* Lockstep'd */,
 				1DAD6D8213675C700018F2F2 /* Lockstep-Info.plist */,
 				1DAD6DAD13686BEA0018F2F2 /* dots.png */,
+				1DAD6DE51369B9030018F2F2 /* SourceTableBackground.png */,
 				1DAD6D8313675C700018F2F2 /* InfoPlist.strings */,
 				1DAD6D8613675C700018F2F2 /* Lockstep-Prefix.pch */,
 			);
@@ -250,6 +253,7 @@
 				1DAD6DA6136856850018F2F2 /* MIT-License.rtf in Resources */,
 				1DAD6DAE13686BEA0018F2F2 /* dots.png in Resources */,
 				1DAD6DDB136905210018F2F2 /* AddAssociationView.xib in Resources */,
+				1DAD6DE61369B9030018F2F2 /* SourceTableBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

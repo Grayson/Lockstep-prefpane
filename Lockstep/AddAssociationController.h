@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SlideView.h"
 
 @interface AddAssociationController : NSObject {
 @private
-	IBOutlet NSView *_view;
+	IBOutlet SlideView *_view;
 	IBOutlet NSButton *_chooseTargetButton;
 	IBOutlet NSButton *_addButton;
 	IBOutlet NSTextField *_pathToSourceField;
