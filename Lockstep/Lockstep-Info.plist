@@ -27,7 +27,7 @@
 	<key>NSMainNibFile</key>
 	<string>Lockstep</string>
 	<key>NSPrefPaneIconFile</key>
-	<string>Lockstep.tiff</string>
+	<string>doppelganger.png</string>
 	<key>NSPrefPaneIconLabel</key>
 	<string>Doppelganger</string>
 	<key>NSPrincipalClass</key>

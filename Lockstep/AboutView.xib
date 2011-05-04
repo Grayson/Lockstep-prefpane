@@ -74,7 +74,7 @@
 							<int key="NSCellFlags2">33554432</int>
 							<object class="NSCustomResource" key="NSContents">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">NSApplicationIcon</string>
+								<string key="NSResourceName">doppelganger</string>
 							</object>
 							<int key="NSAlign">0</int>
 							<int key="NSScale">0</int>
@@ -524,8 +524,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">NSApplicationIcon</string>
-			<string key="NS.object.0">{128, 128}</string>
+			<string key="NS.key.0">doppelganger</string>
+			<string key="NS.object.0">{550, 550}</string>
 		</object>
 	</data>
 </archive>

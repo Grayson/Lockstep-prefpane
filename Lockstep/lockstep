@@ -122,8 +122,9 @@ def deleteAssocations(sources, targets):
 			continue
 		tmp = prefs[src]
 		for tgt in targets:
-			tmp.remove(tgt)
-		prefs[src] = tmp
+			if tgt in tmp: tmp.remove(tgt)
+		if tmp.count() == 0: del prefs[src]
+		else: prefs[src] = tmp
 	try:
 		pickle.dump(prefs, open(PREFS_PATH, 'w'))
 	except Exception, e:

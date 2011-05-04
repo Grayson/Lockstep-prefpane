@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D11AF3D1371EF7300C6618D /* doppelganger.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D11AF3C1371EF7300C6618D /* doppelganger.png */; };
 		1DAD6D7913675C700018F2F2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6D7813675C700018F2F2 /* Cocoa.framework */; };
 		1DAD6D7B13675C700018F2F2 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */; };
 		1DAD6D8513675C700018F2F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8313675C700018F2F2 /* InfoPlist.strings */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D11AF3C1371EF7300C6618D /* doppelganger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doppelganger.png; sourceTree = "<group>"; };
 		1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Lockstep.prefPane; path = Doppelganger.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD6D7813675C700018F2F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
@@ -138,6 +140,7 @@
 				1DAD6D8713675C700018F2F2 /* Lockstep.h */,
 				1DAD6D8913675C700018F2F2 /* Lockstep.m */,
 				1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */,
+				1D11AF3C1371EF7300C6618D /* doppelganger.png */,
 				1DAD6D9E136762E20018F2F2 /* LockstepCLI.h */,
 				1DAD6D9F136762E20018F2F2 /* LockstepCLI.m */,
 				1DAD6DD2136905210018F2F2 /* AcceptsDeleteKeyTableView.h */,
@@ -269,6 +272,7 @@
 				1DAD6DE61369B9030018F2F2 /* SourceTableBackground.png in Resources */,
 				1DB65D5C136AF81C006F0C86 /* AboutView.xib in Resources */,
 				1DB65D63136AFB1C006F0C86 /* Credits.rtf in Resources */,
+				1D11AF3D1371EF7300C6618D /* doppelganger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

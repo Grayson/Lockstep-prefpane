@@ -102,14 +102,14 @@
 }
 
 - (IBAction)delete:(id)sender {
-	if (sender == _sourceTableView) {
+	if (sender == _sourceTableView || [[_sourceTableView window] firstResponder] == _sourceTableView) {
 		NSInteger row = [_sourceTableView selectedRow];
 		if (row == -1) return;
 		
 		[LockstepCLI removeAssociationsForSource:[[self.sourceList objectAtIndex:row] objectForKey:@"path"]];
 		[self reloadAssociations];
 	}
-	else if (sender == _targetTableView) {
+	else if (sender == _targetTableView || [[_targetTableView window] firstResponder] == _targetTableView) {
 		NSInteger sourceRow = [_sourceTableView selectedRow];
 		if (sourceRow == -1) return;
 		NSString *source = [[self.sourceList objectAtIndex:sourceRow] objectForKey:@"path"];
