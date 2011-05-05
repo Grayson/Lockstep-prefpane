@@ -11,6 +11,7 @@
 #import "AddAssociationController.h"
 #import "ToggleView.h"
 #import "AboutController.h"
+#import "MultiColumnHeaderView.h"
 
 @interface Lockstep : NSPreferencePane {
 @private

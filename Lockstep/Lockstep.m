@@ -22,6 +22,9 @@
 	_sourceTableView.target = self;
 	_targetTableView.target = self;
 	
+	_sourceTableView.cornerView = [[[MultiColumnHeaderView alloc] initAsCornerViewWithFrame:_sourceTableView.cornerView.frame] autorelease];
+	_targetTableView.cornerView = [[[MultiColumnHeaderView alloc] initAsCornerViewWithFrame:_targetTableView.cornerView.frame] autorelease];
+	
 	// Update GUI
 	[_toggleView setState:[LockstepCLI launchAgentIsRunning]];
 	[_toggleView display];

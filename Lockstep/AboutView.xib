@@ -525,7 +525,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">doppelganger</string>
-			<string key="NS.object.0">{550, 550}</string>
+			<string key="NS.object.0">{550, 512}</string>
 		</object>
 	</data>
 </archive>

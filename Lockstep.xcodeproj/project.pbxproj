@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D11AF3D1371EF7300C6618D /* doppelganger.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D11AF3C1371EF7300C6618D /* doppelganger.png */; };
 		1DAD6D7913675C700018F2F2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6D7813675C700018F2F2 /* Cocoa.framework */; };
 		1DAD6D7B13675C700018F2F2 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */; };
 		1DAD6D8513675C700018F2F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8313675C700018F2F2 /* InfoPlist.strings */; };
 		1DAD6D8813675C700018F2F2 /* Lockstep.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6D8713675C700018F2F2 /* Lockstep.h */; };
 		1DAD6D8A13675C700018F2F2 /* Lockstep.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8913675C700018F2F2 /* Lockstep.m */; };
-		1DAD6D8C13675C700018F2F2 /* Lockstep.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */; };
 		1DAD6D8F13675C700018F2F2 /* Lockstep.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D8D13675C700018F2F2 /* Lockstep.xib */; };
 		1DAD6D9C136762790018F2F2 /* lockstep in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD6D9B136762790018F2F2 /* lockstep */; };
 		1DAD6DA0136762E20018F2F2 /* LockstepCLI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAD6D9E136762E20018F2F2 /* LockstepCLI.h */; };
@@ -40,10 +38,14 @@
 		1DB65D60136AF8AC006F0C86 /* AboutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB65D5E136AF8AC006F0C86 /* AboutController.h */; };
 		1DB65D61136AF8AC006F0C86 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB65D5F136AF8AC006F0C86 /* AboutController.m */; };
 		1DB65D63136AFB1C006F0C86 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB65D62136AFB1C006F0C86 /* Credits.rtf */; };
+		1DB890DD1372EB2F006B2F36 /* doppelganger_32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DB890DA1372EB2F006B2F36 /* doppelganger_32x32.png */; };
+		1DB890DE1372EB2F006B2F36 /* doppelganger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1DB890DB1372EB2F006B2F36 /* doppelganger.icns */; };
+		1DB890DF1372EB2F006B2F36 /* doppelganger.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DB890DC1372EB2F006B2F36 /* doppelganger.png */; };
+		1DB890E31372EE72006B2F36 /* MultiColumnHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB890E11372EE72006B2F36 /* MultiColumnHeaderView.h */; };
+		1DB890E41372EE72006B2F36 /* MultiColumnHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB890E21372EE72006B2F36 /* MultiColumnHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D11AF3C1371EF7300C6618D /* doppelganger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doppelganger.png; sourceTree = "<group>"; };
 		1DAD6D7513675C700018F2F2 /* Lockstep.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Lockstep.prefPane; path = Doppelganger.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD6D7813675C700018F2F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DAD6D7A13675C700018F2F2 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
@@ -55,7 +57,6 @@
 		1DAD6D8613675C700018F2F2 /* Lockstep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lockstep-Prefix.pch"; sourceTree = "<group>"; };
 		1DAD6D8713675C700018F2F2 /* Lockstep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lockstep.h; sourceTree = "<group>"; };
 		1DAD6D8913675C700018F2F2 /* Lockstep.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lockstep.m; sourceTree = "<group>"; };
-		1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Lockstep.tiff; sourceTree = "<group>"; };
 		1DAD6D8E13675C700018F2F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Lockstep.xib; sourceTree = "<group>"; };
 		1DAD6D9B136762790018F2F2 /* lockstep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lockstep; sourceTree = "<group>"; };
 		1DAD6D9E136762E20018F2F2 /* LockstepCLI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockstepCLI.h; sourceTree = "<group>"; };
@@ -82,6 +83,11 @@
 		1DB65D5E136AF8AC006F0C86 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		1DB65D5F136AF8AC006F0C86 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
 		1DB65D62136AFB1C006F0C86 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		1DB890DA1372EB2F006B2F36 /* doppelganger_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doppelganger_32x32.png; sourceTree = "<group>"; };
+		1DB890DB1372EB2F006B2F36 /* doppelganger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = doppelganger.icns; sourceTree = "<group>"; };
+		1DB890DC1372EB2F006B2F36 /* doppelganger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doppelganger.png; sourceTree = "<group>"; };
+		1DB890E11372EE72006B2F36 /* MultiColumnHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiColumnHeaderView.h; sourceTree = "<group>"; };
+		1DB890E21372EE72006B2F36 /* MultiColumnHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiColumnHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +145,6 @@
 			children = (
 				1DAD6D8713675C700018F2F2 /* Lockstep.h */,
 				1DAD6D8913675C700018F2F2 /* Lockstep.m */,
-				1DAD6D8B13675C700018F2F2 /* Lockstep.tiff */,
-				1D11AF3C1371EF7300C6618D /* doppelganger.png */,
 				1DAD6D9E136762E20018F2F2 /* LockstepCLI.h */,
 				1DAD6D9F136762E20018F2F2 /* LockstepCLI.m */,
 				1DAD6DD2136905210018F2F2 /* AcceptsDeleteKeyTableView.h */,
@@ -157,6 +161,8 @@
 				1DAD6DDE136905400018F2F2 /* SlideView.m */,
 				1DAD6DDF136905400018F2F2 /* ToggleView.h */,
 				1DAD6DE0136905400018F2F2 /* ToggleView.m */,
+				1DB890E11372EE72006B2F36 /* MultiColumnHeaderView.h */,
+				1DB890E21372EE72006B2F36 /* MultiColumnHeaderView.m */,
 				1DAD6DD6136905210018F2F2 /* AddAssociationView.xib */,
 				1DB65D5B136AF81C006F0C86 /* AboutView.xib */,
 				1DAD6D8D13675C700018F2F2 /* Lockstep.xib */,
@@ -170,6 +176,9 @@
 			children = (
 				1DAD6DA21368560C0018F2F2 /* Lockstep'd */,
 				1DAD6D8213675C700018F2F2 /* Lockstep-Info.plist */,
+				1DB890DA1372EB2F006B2F36 /* doppelganger_32x32.png */,
+				1DB890DB1372EB2F006B2F36 /* doppelganger.icns */,
+				1DB890DC1372EB2F006B2F36 /* doppelganger.png */,
 				1DAD6DAD13686BEA0018F2F2 /* dots.png */,
 				1DAD6DE51369B9030018F2F2 /* SourceTableBackground.png */,
 				1DB65D62136AFB1C006F0C86 /* Credits.rtf */,
@@ -207,6 +216,7 @@
 				1DAD6DE1136905400018F2F2 /* SlideView.h in Headers */,
 				1DAD6DE3136905400018F2F2 /* ToggleView.h in Headers */,
 				1DB65D60136AF8AC006F0C86 /* AboutController.h in Headers */,
+				1DB890E31372EE72006B2F36 /* MultiColumnHeaderView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +273,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DAD6D8513675C700018F2F2 /* InfoPlist.strings in Resources */,
-				1DAD6D8C13675C700018F2F2 /* Lockstep.tiff in Resources */,
 				1DAD6D8F13675C700018F2F2 /* Lockstep.xib in Resources */,
 				1DAD6D9C136762790018F2F2 /* lockstep in Resources */,
 				1DAD6DA6136856850018F2F2 /* MIT-License.rtf in Resources */,
@@ -272,7 +281,9 @@
 				1DAD6DE61369B9030018F2F2 /* SourceTableBackground.png in Resources */,
 				1DB65D5C136AF81C006F0C86 /* AboutView.xib in Resources */,
 				1DB65D63136AFB1C006F0C86 /* Credits.rtf in Resources */,
-				1D11AF3D1371EF7300C6618D /* doppelganger.png in Resources */,
+				1DB890DD1372EB2F006B2F36 /* doppelganger_32x32.png in Resources */,
+				1DB890DE1372EB2F006B2F36 /* doppelganger.icns in Resources */,
+				1DB890DF1372EB2F006B2F36 /* doppelganger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +314,7 @@
 				1DAD6DE2136905400018F2F2 /* SlideView.m in Sources */,
 				1DAD6DE4136905400018F2F2 /* ToggleView.m in Sources */,
 				1DB65D61136AF8AC006F0C86 /* AboutController.m in Sources */,
+				1DB890E41372EE72006B2F36 /* MultiColumnHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
